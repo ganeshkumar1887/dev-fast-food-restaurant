@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Card | Dev Fast Food Vrindavan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Bungee&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff5722;
+            --gold: #ffb703;
+            --dark-board: #0d0d0d;
+            --card-bg: #161616;
+            --border-gold: #c69214;
+            --text-light: #ffffff;
+            --text-gray: #a8a8a8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-board);
+            color: var(--text-light);
+            padding: 2rem 1rem;
+        }
+
+        /* Top Navigation Back Button */
+        .back-nav {
+            max-width: 1200px;
+            margin: 0 auto 1.5rem auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-btn {
+            background: #222;
+            color: var(--gold);
+            text-decoration: none;
+            padding: 0.6rem 1.4rem;
+            border-radius: 25px;
+            font-weight: 600;
+            border: 1px solid var(--border-gold);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: var(--gold);
+            color: #000;
+        }
+
+        /* Menu Board Container */
+        .menu-board {
+            max-width: 1200px;
+            margin: 0 auto;
+            border: 3px solid var(--border-gold);
+            border-radius: 24px;
+            padding: 2.5rem;
+            background: radial-gradient(circle at top, #1a1612 0%, #0d0d0d 100%);
+            box-shadow: 0 0 35px rgba(255, 183, 3, 0.15);
+        }
+
+        /* Header / Logo Style */
+        .menu-header {
+            text-align: center;
+            border-bottom: 2px dashed rgba(198, 146, 20, 0.4);
+            padding-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .pure-veg-badge {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            border: 2px solid #25d366;
+            padding: 6px 14px;
+            border-radius: 12px;
+            text-align: center;
+            color: #25d366;
+            font-weight: 800;
+            font-size: 0.85rem;
+        }
+
+        .menu-header h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .menu-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--gold);
+            letter-spacing: 4px;
+            margin-top: -10px;
+        }
+
+        /* 2-Column Menu Layout */
+        .menu-sections-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        /* Category Box */
+        .category-box {
+            margin-bottom: 2.5rem;
+        }
+
+        .category-title {
+            display: inline-block;
+            background: linear-gradient(90deg, #d4900a, var(--gold));
+            color: #000;
+            padding: 0.35rem 1.2rem;
+            font-size: 1.15rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            border-radius: 6px 20px 20px 6px;
+            margin-bottom: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        /* Food Items list */
+        .item-list {
+            list-style: none;
+        }
+
+        .item-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 0.9rem;
+            font-size: 1.05rem;
+        }
+
+        .item-name {
+            font-weight: 600;
+            color: #f0f0f0;
+        }
+
+        .item-name::before {
+            content: '• ';
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        .item-dots {
+            flex-grow: 1;
+            border-bottom: 1px dotted #444;
+            margin: 0 10px;
+        }
+
+        .item-price {
+            font-weight: 700;
+            color: var(--gold);
+            font-size: 1.1rem;
+            white-space: nowrap;
+        }
+
+        /* Bottom Highlights */
+        .menu-footer-bar {
+            border-top: 2px dashed rgba(198, 146, 20, 0.4);
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .features-tags {
+            display: flex;
+            gap: 2rem;
+            color: #25d366;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .thank-you-msg {
+            font-family: 'Poppins', cursive, sans-serif;
+            font-size: 1.4rem;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        @media (max-width: 900px) {
+            .menu-sections-wrapper {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .menu-header h1 { font-size: 2.6rem; }
+            .menu-header h2 { font-size: 1.8rem; }
+            .pure-veg-badge { position: static; margin: 0 auto 1rem auto; display: inline-block; }
+            .menu-board { padding: 1.5rem 1rem; }
+            .menu-footer-bar { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Back to Home Button -->
+    <div class="back-nav">
+        <a href="index.html" class="back-btn">← Back to Home</a>
+        <a href="tel:+918054997936" class="back-btn" style="background: #25d366; color: #fff; border: none;">📞 Call to Order</a>
+    </div>
+
+    <!-- Main Menu Card Design -->
+    <div class="menu-board">
+        
+        <!-- Header -->
+        <div class="menu-header">
+            <div class="pure-veg-badge">🌱 100% PURE VEG</div>
+            <h1>👨‍🍳 DEV</h1>
+            <h2>FAST FOOD</h2>
+            <p style="color: var(--text-gray); font-size: 0.95rem; margin-top: 6px;">Near Banke Bihari Mandir, Vrindavan</p>
+        </div>
+
+        <!-- 2-Column Sections -->
+        <div class="menu-sections-wrapper">
+            
+            <!-- LEFT COLUMN -->
+            <div class="menu-col">
+                
+                <!-- PIZZA -->
+                <div class="category-box">
+                    <span class="category-title">🍕 PIZZA</span>
+                    <ul class="item-list">
+                        <li class="item-row">
+                            <span class="item-name">Chilli Paneer Pizza</span>
+                            <span class="item-dots"></span>
+                            <span class="item-price">₹129</span>
+                        </li>
+                        <li class="item-row">
+                            <span class="item-name">Farmhouse Pizza</span>
+                            <span class="item-dots"></span>
+                            <span class="item-price">₹109</span>
+                        </li>
+                        <li class="item-row">
+                            <span class="item-name">Cheese Corn Pizza</span>
+                            <span class="item-dots"></span>
+                            <span class="item-price">₹79</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- SANDWICH -->
+                <div class="category-box">
+                    <span class="category-title">🥪 SANDWICH</span>
+                    <ul class="item-list">
+                        <li class="item-row">
+                            <span class="item-name">Pizza Cheese Sandwich (4pc)</span>
+                            <span class="item-dots"></span>
+                            <span class="item-price">₹79</span>
+                        </li>
+                        <li class="item-row">
+                            <span class="item-name">Cheese Corn Sandwich (4pc)</span>
+                            <span class="item-dots"></span>
+                            <span class="item-price">₹49</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- BURGER -->
+                <div class="category-box">
+                    <span class="category-title">🍔 BURGER</span>
+                    <ul class="item-list">
+                        <li class="item-row">
+                            <span class="item-name">Veg Burger</span>
+                            <span class="item-dots"></span>
+                            <span class="item-price">₹29</span>
+                        </li>
+                        <li class="item-row">
+                            <span class="item-name">Veg Paneer Burger</span>
+                            <span class="item-dots"></span>
+                            <span class="item-price">₹59</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- FRIES -->
+                <div class="category-box">
+                    <span class="category-title">🍟 FRIES</span>
+                    <ul class="item-list">
+                        <li class="item-row">
+                            <span class="item-name">Salted Fries</span>
+                            <span class="item-dots"></span>
+                            <span class="item-price">Full ₹40 / Half ₹20</span>
+                        </li>
+                        <li class="item-row">
+                            <span class="item-name">Chatpta Fries</span>
+                            <span class="item-dots"></span>
+                            <span class="item-price">Full ₹60 / Half ₹30</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- PASTA -->
+                <div class="category-box">
+                    <span class="category-title">🍝 PASTA</span>
+                    <ul class="item-list">
+                        <li class="item-row">
+                            <span class="item-name">Red Sauce Pasta (Arabita)</span>
+                            <span class="item-dots"></span>
+                            <span class="item-price">₹119</span>
+                        </li>
+                        <li class="item-row">
+                            <span class="item-name">White Sauce Pasta (Alfredo)</span>
+                            <span class="item-dots"></span>
+                            <span class="item-price">₹79</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="menu-col">
+
+                <!-- MOMOS -->
+                <div class="category-box">
+                    <span class="category-title">🥟 MOMOS</span>
+                    <ul class="item-list">
+                        <li class="item-row">
+                            <span class="item-name">Veg Steam Momos</span>
+                            <span class="item-dots"></span>
+                            <span class="item-price">Full ₹40 (10pc) / Half ₹20 (5pc)</span>
+                        </li>
+                        <li class="item-row">
+                            <span class="item-name">Steam Paneer Momos</span>
+                            <span class="item-dots"></span>
+                            <span class="item-price">Full ₹40 (10pc) / Half ₹30 (5pc)</span>
+                        </li>
+                        <li class="item-row">
+                            <span class="item-name">Spl Kurkure Momos</span>
+                            <span class="item-dots"></span>
+                            <span class="item-price">Full ₹70 (8pc) / Half ₹45 (4pc)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- FRIED RICE -->
+                <div class="category-box">
+                    <span class="category-title">🍚 FRIED RICE</span>
+                    <ul class="item-list">
+                        <li class="item-row">
+                            <span class="item-name">Veg Fried Rice</span>
+                            <span class="item-dots"></span>
+                            <span class="item-price">₹80</span>
+                        </li>
+                        <li class="item-row">
+                            <span class="item-name">Veg Chilli Garlic Fried Rice</span>
+                            <span class="item-dots"></span>
+                            <span class="item-price">₹80</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- CHINESE -->
+                <div class="category-box">
+                    <span class="category-title">🍜 CHINESE CORNER</span>
+                    <ul class="item-list">
+                        <li class="item-row">
+                            <span class="item-name">Veg Manchurian</span>
+                            <span class="item-dots"></span>
+                            <span class="item-price">Full ₹80 (10pc) / Half ₹40 (5pc)</span>
+                        </li>
+                        <li class="item-row">
+                            <span class="item-name">Veg Noodle</span>
+                            <span class="item-dots"></span>
+                            <span class="item-price">Full ₹60 / Half ₹30</span>
+                        </li>
+                        <li class="item-row">
+                            <span class="item-name">Veg Spring Roll</span>
+                            <span class="item-dots"></span>
+                            <span class="item-price">₹30 (1 pc)</span>
+                        </li>
+                        <li class="item-row">
+                            <span class="item-name">Honey Chilli Potato</span>
+                            <span class="item-dots"></span>
+                            <span class="item-price">₹130</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Footer Highlight Banner -->
+        <div class="menu-footer-bar">
+            <div class="features-tags">
+                <span>🌱 100% PURE VEG</span>
+                <span>✨ FRESH INGREDIENTS</span>
+                <span>😊 GOOD FOOD GOOD MOOD</span>
+            </div>
+            <div class="thank-you-msg">
+                Thank You! Visit Again ❤️
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

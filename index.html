@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Fast Food | Vrindavan</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="home">
+    <!-- Image Slider Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.hero-slide');
+            let currentSlide = 0;
+
+            if (slides.length > 0) {
+                setInterval(() => {
+                    slides[currentSlide].classList.remove('active');
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    slides[currentSlide].classList.add('active');
+                }, 3000); // Har 3 second me agli image aayegi
+            }
+        });
+    </script>
+</body>
+</html>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#home" class="logo">
+            🍔 <span class="highlight">DEV</span> FAST FOOD <span class="badge">VRINDAVAN</span>
+        </a>
+        <ul class="nav-links">
+    <li><a href="index.html#home">Home</a></li>
+    <li><a href="index.html#about">About Us</a></li>
+    <li><a href="menu.html" class="menu-btn-highlight">View Full Menu 📜</a></li>
+    <li><a href="index.html#gallery">Gallery</a></li>
+    <li><a href="index.html#contact">Contact Us</a></li>
+</ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <!-- Hero Slider Section -->
+    <!-- Hero Slider Section -->
+    <header class="hero" id="home">
+        <!-- Background Image Slides -->
+        <div class="hero-slide active" style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url('pizza.jpg');"></div>
+        <div class="hero-slide" style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url('mochurian.png');"></div>
+        <div class="hero-slide" style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url('Crispy-spring-rolls.jpg');"></div>
+        <div class="hero-slide" style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url('fremch fries.jpg');"></div>
+        <div class="hero-slide" style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url('sandwich.webp');"></div>
+        <div class="hero-slide" style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url('veg momos.jpg');"></div>
+
+        <!-- Hero Centered Content -->
+        <div class="hero-content">
+            <span class="hero-tagline">✨ Welcome To Vrindavan's Best</span>
+            <h1 class="hero-title">DEV FAST FOOD</h1>
+            <p class="hero-desc">Garma-garam, crispy aur tasty fast food ka asli swaad ab Vrindavan me!</p>
+            
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-container">
+            <div class="about-text">
+                <h3>Vrindavan Ka Sabse Charchit Fast Food Destination</h3>
+                <p>
+                    Radhe-Radhe! <strong>Dev Fast Food</strong> ab pavitra nagari <strong>Vrindavan</strong> me fast food premion ke liye ek naya aur swadisht adda ban chuka hai. Hum laaye hain wahi chatpata, street-style aur crispy swaad jiska intezaar har kisi ko rehta hai.
+                </p>
+                <p>
+                    Chaho crunchy veg burgers ho, garma-garam momos, Chinese style chowmein, ya fir honey chilli potato—hamare yahan har dish <strong>100% shuddhata, taaza masalon aur hygiene</strong> ka dhyan rakhkar banayi jaati hai. Vrindavan aane wale sabhi tirth-yatriyon aur local doston ko lajawab swaad dena hi hamara lakshya hai.
+                </p>
+                <div class="about-features">
+                    <div class="feature-item">
+                        <div class="icon">✨</div>
+                        <h4>100% Fresh</h4>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon">🧼</div>
+                        <h4>Pure Hygiene</h4>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon">🌶️</div>
+                        <h4>Desi Tadka</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" alt="Cooking in Vrindavan">
+                <div class="about-badge">📍 Now in Vrindavan</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <h2 class="section-title">Our Special Menu</h2>
+        <div class="menu-grid">
+
+            <!-- Burger -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80" alt="Crispy Burger">
+                <div class="menu-content">
+                    <div class="menu-header">
+                        <span class="menu-title">Crispy Burger</span>
+                        <span class="menu-price">₹40</span>
+                    </div>
+                    <p class="menu-desc">Fresh bun, crunchy aloo patty, mayo aur fresh veggies ke sath.</p>
+                </div>
+            </div>
+
+            <!-- Paneer Burger -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=600&q=80" alt="Paneer Burger">
+                <div class="menu-content">
+                    <div class="menu-header">
+                        <span class="menu-title">Paneer Burger</span>
+                        <span class="menu-price">₹70</span>
+                    </div>
+                    <p class="menu-desc">Spicy paneer slice, fresh veggies aur tandoori mayo mix.</p>
+                </div>
+            </div>
+
+            <!-- Manchurian -->
+            <div class="menu-card">
+                <img src="mochurian.png">
+                <div class="menu-content">
+                    <div class="menu-header">
+                        <span class="menu-title">Veg Manchurian</span>
+                        <span class="menu-price">₹80</span>
+                    </div>
+                    <p class="menu-desc">Crispy veg balls Chinese style spicy thick gravy ke sath.</p>
+                </div>
+            </div>
+
+            <!-- Chowmein -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=600&q=80" alt="Veg Chowmein">
+                <div class="menu-content">
+                    <div class="menu-header">
+                        <span class="menu-title">Veg Chowmein</span>
+                        <span class="menu-price">₹60</span>
+                    </div>
+                    <p class="menu-desc">Street-style spicy stir-fried noodles crunchy veggies ke sath.</p>
+                </div>
+            </div>
+
+            <!-- Momos -->
+            <div class="menu-card">
+                <img src="veg momos.jpg">
+                <div class="menu-content">
+                    <div class="menu-header">
+                        <span class="menu-title">Veg Momos</span>
+                        <span class="menu-price">₹50</span>
+                    </div>
+                    <p class="menu-desc">Steamed ya Fried momos teekhi red chutney aur mayo ke sath.</p>
+                </div>
+            </div>
+
+            <!-- Finger Chips -->
+            <div class="menu-card">
+                <img src="fremch fries.jpg" alt="Finger Chips">
+                <div class="menu-content">
+                    <div class="menu-header">
+                        <span class="menu-title">Finger Chips</span>
+                        <span class="menu-price">₹50</span>
+                    </div>
+                    <p class="menu-desc">Crispy golden potato fingers chatpate masale ke sath.</p>
+                </div>
+            </div>
+
+            <!-- Chilli Potato -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=600&q=80" alt="Chilli Potato">
+                <div class="menu-content">
+                    <div class="menu-header">
+                        <span class="menu-title">Honey Chilli Potato</span>
+                        <span class="menu-price">₹80</span>
+                    </div>
+                    <p class="menu-desc">Crispy fried potatoes teekhe-mithe sauce aur sesame seeds ke sath.</p>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="pizza.jpg" alt="Cheese Pizza">
+                <div class="menu-content">
+                    <div class="menu-header">
+                        <span class="menu-title">Cheese Corn Pizza</span>
+                        <span class="menu-price">₹120</span>
+                    </div>
+                    <p class="menu-desc">Loaded cheese, sweet corn, capsicum aur herbs ke sath crunchy base.</p>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img src="Crispy-spring-rolls.jpg" alt="Spring Roll">
+                <div class="menu-content">
+                    <div class="menu-header">
+                        <span class="menu-title">Crispy Spring Roll</span>
+                        <span class="menu-price">₹60</span>
+                    </div>
+                    <p class="menu-desc">Crispy fried rolls stuffed with spicy shredded veggies aur schezwan sauce.</p>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img src="sandwich.webp" alt="Grilled Sandwich">
+                <div class="menu-content">
+                    <div class="menu-header">
+                        <span class="menu-title">Veg Grilled Sandwich</span>
+                        <span class="menu-price">₹50</span>
+                    </div>
+                    <p class="menu-desc">Spicy aloo masala, fresh cucumber, tomato aur cheese se bana grilled sandwich.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- Contact Us Section -->
+    <section id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <p class="contact-subtitle">
+            Aap direct call karke order place kar sakte hain ya hamari shop par aa sakte hain.
+        </p>
+
+        <div class="contact-grid">
+            <div class="contact-box-item">
+                <div class="box-icon">📍</div>
+                <h3>Shop Location</h3>
+                <p>Near Banke Bihari Mandir,<br>Vrindavan, Mathura (U.P.)</p>
+            </div>
+
+            <div class="contact-box-item">
+                <div class="box-icon">⏰</div>
+                <h3>Service Timing</h3>
+                <p>4:00 PM – 5:00 AM<br>(Daily Open / All 7 Days)</p>
+            </div>
+
+            <div class="contact-box-item">
+                <div class="box-icon">📞</div>
+                <h3>Instant Order</h3>
+                <p>+91 80549 97936<br>Fast Delivery & Counter Pickup</p>
+            </div>
+        </div>
+
+        <div class="contact-btn-group">
+            <a href="tel:+918054997936" class="btn-contact-call">Call Now: +91 80549 97936</a>
+            <a href="https://wa.me/918054997936" target="_blank" class="btn-contact-wa">Order on WhatsApp 💬</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Dev Fast Food, Vrindavan. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
